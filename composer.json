@@ -1,0 +1,22 @@
+{
+    "name": "nailfor/php-websocket-client",
+    "description": "a websocket client library for php",
+    "keywords": ["webSocket", "IoT"],
+    "license": "LGPL",
+    "authors": [
+        {
+            "name": "Nailfor"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "nailfor\\websocket\\": "src"
+        }
+    },
+    "require": {
+        "react/socket": "^1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.0.0"
+    }
+}

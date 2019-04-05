@@ -39,15 +39,15 @@ class Connect extends ControlPacket
         $version = new Version;
         
         $header = [
-            'GET '                      => $this->path . ' HTTP/1.1',
-            'Origin: '                  => $this->origin,
-            'Host: '                    => $this->url,
-            'Sec-WebSocket-Key: '       => static::$key,
-            'User-Agent: '              => 'PHPWebSocketClient',
-            'Upgrade: '                 => $version->getProtocolIdentifierString(),
-            'Connection: '              => 'Upgrade',
-//            'Sec-WebSocket-Protocol: '  => 'wamp',
-            'Sec-WebSocket-Version: '   => $version->getProtocolVersion(),
+            'GET'                       => $this->path . ' HTTP/1.1',
+            'Host:'                     => $this->url,
+            'Origin:'                   => $this->origin,
+            'User-Agent:'               => 'PHPWebSocketClient',
+            'Connection:'               => 'keep-alive, Upgrade',
+            'Upgrade:'                  => $version->getProtocolIdentifierString(),
+//            'Sec-WebSocket-Protocol:'  => 'wamp',
+            'Sec-WebSocket-Version:'    => $version->getProtocolVersion(),
+            'Sec-WebSocket-Key:'        => static::$key,
         ];
         
         $result = '';
